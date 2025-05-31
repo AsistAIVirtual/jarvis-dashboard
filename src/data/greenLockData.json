@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Solace",
+    "ticker": "SOLACE",
+    "baseUnlock": 119,
+    "date": "2025-05-31",
+    "image": "/images/solace.png",
+    "participants": "12,579",
+    "oversub": "2541.05%"
+  },
+  {
+    "name": "Verdant",
+    "ticker": "VDNT",
+    "baseUnlock": 29,
+    "date": "2025-05-31",
+    "image": "/images/verdant.png",
+    "participants": "6,557",
+    "oversub": "801.61%"
+  },
+  {
+    "name": "Bookie AI",
+    "ticker": "BOOKIE",
+    "baseUnlock": 89,
+    "date": "2025-05-31",
+    "image": "/images/bookie.png",
+    "participants": "9,348",
+    "oversub": "1435.17%"
+  },
+  {
+    "name": "artihm",
+    "ticker": "ART",
+    "baseUnlock": 182,
+    "date": "2025-05-31",
+    "image": "/images/artihm.png",
+    "participants": "2,078",
+    "oversub": "378.99%"
+  },
+  {
+    "name": "Magnus Opus",
+    "ticker": "MAGNUS",
+    "baseUnlock": 27,
+    "date": "2025-05-31",
+    "image": "/images/magnus.png",
+    "participants": "5,640",
+    "oversub": "827.45%"
+  },
+  {
+    "name": "VirgenIQ",
+    "ticker": "VIQ",
+    "baseUnlock": 20,
+    "date": "2025-05-31",
+    "image": "/images/virgeniq.png",
+    "participants": "724",
+    "oversub": "136.27%"
+  },
+  {
+    "name": "AInalyst",
+    "ticker": "AIN",
+    "baseUnlock": 25,
+    "date": "2025-05-31",
+    "image": "/images/ainalyst.png",
+    "participants": "3,809",
+    "oversub": "560.78%"
+  },
+  {
+    "name": "Mello AI",
+    "ticker": "MELLO",
+    "baseUnlock": 24,
+    "date": "2025-05-31",
+    "image": "/images/melloai.png",
+    "participants": "1,893",
+    "oversub": "326.32%"
+  },
+  {
+    "name": "NOTHING",
+    "ticker": "NOTHING",
+    "baseUnlock": 7884,
+    "date": "2025-05-31",
+    "image": "/images/nothing.png",
+    "participants": "1,138",
+    "oversub": "247.16%"
+  },
+  {
+    "name": "XOE",
+    "ticker": "XOE",
+    "baseUnlock": 176,
+    "date": "2025-05-31",
+    "image": "/images/xoe.png",
+    "participants": "2,363",
+    "oversub": "388.15%"
+  },
+  {
+    "name": "RoboStack",
+    "ticker": "ROBOT",
+    "baseUnlock": 23,
+    "date": "2025-05-31",
+    "image": "/images/robostack.png",
+    "participants": "5,147",
+    "oversub": "1238.45%"
+  },
+  {
+    "name": "MindYaps",
+    "ticker": "MNY",
+    "baseUnlock": 181,
+    "date": "2025-05-31",
+    "image": "/images/mindyaps.png",
+    "participants": "810",
+    "oversub": "185.41%"
+  },
+  {
+    "name": "Capminal",
+    "ticker": "CAP",
+    "baseUnlock": 23,
+    "date": "2025-05-31",
+    "image": "/images/capminal.png",
+    "participants": "1,897",
+    "oversub": "356.89%"
+  },
+  {
+    "name": "nAIncy",
+    "ticker": "NAINCY",
+    "baseUnlock": 22,
+    "date": "2025-05-31",
+    "image": "/images/naincy.png",
+    "participants": "6,664",
+    "oversub": "1584.40%"
+  },
+  {
+    "name": "Bizzy",
+    "ticker": "BIZ",
+    "baseUnlock": 82,
+    "date": "2025-05-31",
+    "image": "/images/bizzy.png",
+    "participants": "5,279",
+    "oversub": "1345.95%"
+  },
+  {
+    "name": "Maneki AI",
+    "ticker": "MANEKI",
+    "baseUnlock": 19,
+    "date": "2025-05-31",
+    "image": "/images/manekiai.png",
+    "participants": "4,929",
+    "oversub": "938.98%"
+  },
+  {
+    "name": "Arbus",
+    "ticker": "ARBUS",
+    "baseUnlock": 17,
+    "date": "2025-05-31",
+    "image": "/images/arbus.png",
+    "participants": "7,482",
+    "oversub": "1808.19%"
+  },
+  {
+    "name": "xLLM2",
+    "ticker": "XLLM2",
+    "baseUnlock": 6,
+    "date": "2025-05-31",
+    "image": "/images/xllm2.png",
+    "participants": "1,812",
+    "oversub": "307.80%"
+  },
+  {
+    "name": "Super Connector",
+    "ticker": "SUPER",
+    "baseUnlock": 16,
+    "date": "2025-05-31",
+    "image": "/images/super.png",
+    "participants": "2,496",
+    "oversub": "523.33%"
+  },
+  {
+    "name": "Axelrod",
+    "ticker": "AXR",
+    "baseUnlock": 12,
+    "date": "2025-05-31",
+    "image": "/images/axelrod.png",
+    "participants": "7,004",
+    "oversub": "2483.15%"
+  },
+  {
+    "name": "GPTWARS AI",
+    "ticker": "GPTWAI",
+    "baseUnlock": 12,
+    "date": "2025-05-31",
+    "image": "/images/gptwarsai.png",
+    "participants": "3,483",
+    "oversub": "783.81%"
+  },
+  {
+    "name": "Gloria",
+    "ticker": "GLORIA",
+    "baseUnlock": 102,
+    "date": "2025-05-31",
+    "image": "/images/gloria.png",
+    "participants": "2,130",
+    "oversub": "686.26%"
+  },
+  {
+    "name": "Arcturian AI",
+    "ticker": "LIGHT",
+    "baseUnlock": 13,
+    "date": "2025-05-31",
+    "image": "/images/arcturian.png",
+    "participants": "878",
+    "oversub": "314.47%"
+  },
+  {
+    "name": "WhaleIntel",
+    "ticker": "WINT",
+    "baseUnlock": 145,
+    "date": "2025-05-31",
+    "image": "/images/whaleintel.png",
+    "participants": "614",
+    "oversub": "396.74%"
+  },
+  {
+    "name": "BasisOs",
+    "ticker": "BIOS",
+    "baseUnlock": 147,
+    "date": "2025-05-31",
+    "image": "/images/basisos.png",
+    "participants": "917",
+    "oversub": "537.40%"
+  },
+  {
+    "name": "h011yw00d",
+    "ticker": "HOLLY",
+    "baseUnlock": 17,
+    "date": "2025-05-31",
+    "image": "/images/h011yw00d.png",
+    "participants": "1,854",
+    "oversub": "2132.30%"
+  }
+]
