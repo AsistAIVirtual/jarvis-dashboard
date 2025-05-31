@@ -73,28 +73,55 @@ export default function Dashboard() {
   };
 
   const tokens = greenLockData.map(t => ({ ...t, unlockTime: Math.max(0, t.baseUnlock - daysSince(t.date)) }));
-
   const filteredBySearch = tokens.filter(token =>
     token.name.toLowerCase().includes(search.toLowerCase()) ||
     token.ticker.toLowerCase().includes(search.toLowerCase())
   );
-
   const filteredByDays = filteredBySearch.filter(token => {
     if (filterOption === 'under7') return token.unlockTime <= 7;
     if (filterOption === 'under22') return token.unlockTime <= 22;
     return true;
   });
-
   const sortedTokens = [...filteredByDays].sort((a, b) => sortOrder === 'asc' ? a.unlockTime - b.unlockTime : b.unlockTime - a.unlockTime);
 
   return (
-    <div className="min-h-screen bg-[#0A0F1C] text-white p-6">
+    <div className="min-h-screen bg-[#0A1C2F] text-white p-6">
+      <div className="text-center mb-6">
+        <h1 className="text-4xl italic font-bold text-white">Virgenscan</h1>
+        <p className="text-lg italic">Just A Rather Virgen Intelligent System ($JARVIS)</p>
+      </div>
+
       <div className="flex space-x-2 mb-6 justify-center">
         <button onClick={() => setShowSection('volume')} className={`px-4 py-2 rounded ${showSection === 'volume' ? 'bg-blue-600' : 'bg-gray-600'}`}>Daily Volume</button>
         <button onClick={() => setShowSection('greenlock')} className={`px-4 py-2 rounded ${showSection === 'greenlock' ? 'bg-blue-600' : 'bg-gray-600'}`}>Green Lock Period</button>
         <button onClick={() => setShowSection('subscribe')} className={`px-4 py-2 rounded ${showSection === 'subscribe' ? 'bg-blue-600' : 'bg-gray-600'}`}>Subscribe Unlock Period</button>
         <button onClick={() => setShowSection('agents')} className={`px-4 py-2 rounded ${showSection === 'agents' ? 'bg-blue-600' : 'bg-gray-600'}`}>Agent Market (coming soon)</button>
       </div>
+
+      {showSection === 'volume' && (
+        <div className="max-w-xl mx-auto">
+          <h2 className="text-xl font-bold mb-4">Daily Volume</h2>
+          <input className="w-full p-2 rounded text-black mb-2" placeholder="Enter Wallet Address" value={wallet} onChange={(e) => setWallet(e.target.value)} />
+          <div className="flex gap-2 mb-2">
+            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="dd.MM.yyyy" className="p-2 text-black rounded w-full" placeholderText="Start Date" />
+            <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} dateFormat="dd.MM.yyyy" className="p-2 text-black rounded w-full" placeholderText="End Date" />
+          </div>
+          <button onClick={handleVolumeFetch} className="bg-blue-600 px-4 py-2 rounded">Check Volume</button>
+          {volumeData && (
+            <div className="mt-4">
+              {volumeData.error ? (
+                <p className="text-red-400">{volumeData.error}</p>
+              ) : (
+                <div>
+                  <p>Transactions: {volumeData.transactions}</p>
+                  <p>Volume: {volumeData.volume}</p>
+                  <p>USD Value: {volumeData.usd}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
 
       {showSection === 'greenlock' && (
         <div className="max-w-6xl mx-auto">
@@ -123,36 +150,11 @@ export default function Dashboard() {
         </div>
       )}
 
-      {showSection === 'volume' && (
-        <div className="max-w-xl mx-auto">
-          <h2 className="text-xl font-bold mb-4">Daily Volume</h2>
-          <input className="w-full p-2 rounded text-black mb-2" placeholder="Enter Wallet Address" value={wallet} onChange={(e) => setWallet(e.target.value)} />
-          <div className="flex gap-2 mb-2">
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="dd.MM.yyyy" className="p-2 text-black rounded w-full" placeholderText="Start Date" />
-            <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} dateFormat="dd.MM.yyyy" className="p-2 text-black rounded w-full" placeholderText="End Date" />
-          </div>
-          <button onClick={handleVolumeFetch} className="bg-blue-600 px-4 py-2 rounded">Check Volume</button>
-          {volumeData && (
-            <div className="mt-4">
-              {volumeData.error ? (
-                <p className="text-red-400">{volumeData.error}</p>
-              ) : (
-                <div>
-                  <p>Transactions: {volumeData.transactions}</p>
-                  <p>Volume: {volumeData.volume}</p>
-                  <p>USD Value: {volumeData.usd}</p>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
-
       {showSection === 'subscribe' && (
         <div className="max-w-xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Subscribe to Unlock Reminder</h2>
           <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Token Name" value={tokenAddress} onChange={(e) => setTokenAddress(e.target.value)} />
-          <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Email or Twitter" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Your Wallet Address" value={userWallet} onChange={(e) => setUserWallet(e.target.value)} />
           <div className="mb-2">
             <label>
@@ -166,4 +168,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
