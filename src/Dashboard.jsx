@@ -14,6 +14,8 @@ export default function Dashboard() {
   const [email, setEmail] = useState('');
   const [agreeToNotify, setAgreeToNotify] = useState(false);
   const [userWallet, setUserWallet] = useState('');
+  const [filterOption, setFilterOption] = useState('all');
+  const [sortOrder, setSortOrder] = useState('asc');
 
   const handleVolumeFetch = async () => {
     if (!wallet || !startDate || !endDate) {
@@ -71,7 +73,19 @@ export default function Dashboard() {
   };
 
   const tokens = greenLockData.map(t => ({ ...t, unlockTime: Math.max(0, t.baseUnlock - daysSince(t.date)) }));
-  const filteredTokens = tokens.filter(token => token.name.toLowerCase().includes(search.toLowerCase()) || token.ticker.toLowerCase().includes(search.toLowerCase()));
+
+  const filteredBySearch = tokens.filter(token =>
+    token.name.toLowerCase().includes(search.toLowerCase()) ||
+    token.ticker.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const filteredByDays = filteredBySearch.filter(token => {
+    if (filterOption === 'under7') return token.unlockTime <= 7;
+    if (filterOption === 'under22') return token.unlockTime <= 22;
+    return true;
+  });
+
+  const sortedTokens = [...filteredByDays].sort((a, b) => sortOrder === 'asc' ? a.unlockTime - b.unlockTime : b.unlockTime - a.unlockTime);
 
   return (
     <div className="min-h-screen bg-[#0A0F1C] text-white p-6">
@@ -81,6 +95,33 @@ export default function Dashboard() {
         <button onClick={() => setShowSection('subscribe')} className={`px-4 py-2 rounded ${showSection === 'subscribe' ? 'bg-blue-600' : 'bg-gray-600'}`}>Subscribe Unlock Period</button>
         <button onClick={() => setShowSection('agents')} className={`px-4 py-2 rounded ${showSection === 'agents' ? 'bg-blue-600' : 'bg-gray-600'}`}>Agent Market (coming soon)</button>
       </div>
+
+      {showSection === 'greenlock' && (
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-xl font-bold mb-4">Green Lock Tokens</h2>
+          <input className="w-full p-2 rounded text-black mb-4" placeholder="Search Token" value={search} onChange={(e) => setSearch(e.target.value)} />
+          <div className="flex space-x-2 mb-4">
+            <button onClick={() => setFilterOption('all')} className={`px-3 py-1 rounded ${filterOption === 'all' ? 'bg-blue-500' : 'bg-gray-600'}`}>All</button>
+            <button onClick={() => setFilterOption('under7')} className={`px-3 py-1 rounded ${filterOption === 'under7' ? 'bg-blue-500' : 'bg-gray-600'}`}>Under 7 Days</button>
+            <button onClick={() => setFilterOption('under22')} className={`px-3 py-1 rounded ${filterOption === 'under22' ? 'bg-blue-500' : 'bg-gray-600'}`}>Under 22 Days</button>
+            <button onClick={() => setSortOrder('asc')} className={`px-3 py-1 rounded ${sortOrder === 'asc' ? 'bg-green-500' : 'bg-gray-600'}`}>Sort ↑</button>
+            <button onClick={() => setSortOrder('desc')} className={`px-3 py-1 rounded ${sortOrder === 'desc' ? 'bg-green-500' : 'bg-gray-600'}`}>Sort ↓</button>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {sortedTokens.map((token, index) => (
+              <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md text-center">
+                <img src={token.image} alt={token.name} className="w-16 h-16 mx-auto rounded-full mb-2 object-cover" />
+                <h3 className="text-lg font-semibold">{token.name}</h3>
+                <p className="text-sm text-gray-400">${token.ticker}</p>
+                <p className="text-2xl font-bold my-2">{token.unlockTime}</p>
+                <p className="text-sm">Days to Unlock</p>
+                <p className="mt-2 text-green-400 text-sm">{token.participants} participants</p>
+                <p className="text-green-400 text-sm">{token.oversub} Sub</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {showSection === 'volume' && (
         <div className="max-w-xl mx-auto">
@@ -107,26 +148,6 @@ export default function Dashboard() {
         </div>
       )}
 
-      {showSection === 'greenlock' && (
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl font-bold mb-4">Green Lock Tokens</h2>
-          <input className="w-full p-2 rounded text-black mb-4" placeholder="Search Token" value={search} onChange={(e) => setSearch(e.target.value)} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {filteredTokens.map((token, index) => (
-              <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md text-center">
-                <img src={token.image} alt={token.name} className="w-16 h-16 mx-auto rounded-full mb-2 object-cover" />
-                <h3 className="text-lg font-semibold">{token.name}</h3>
-                <p className="text-sm text-gray-400">${token.ticker}</p>
-                <p className="text-2xl font-bold my-2">{token.unlockTime}</p>
-                <p className="text-sm">Days to Unlock</p>
-                <p className="mt-2 text-green-400 text-sm">{token.participants} participants</p>
-                <p className="text-green-400 text-sm">{token.oversub} Sub</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
       {showSection === 'subscribe' && (
         <div className="max-w-xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Subscribe to Unlock Reminder</h2>
@@ -145,3 +166,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
