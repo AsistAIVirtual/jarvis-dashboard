@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import './styles/react-datepicker-fix.css';
+
 
 export default function Dashboard() {
   const [wallet, setWallet] = useState('');
