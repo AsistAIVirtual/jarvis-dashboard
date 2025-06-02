@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import greenLockData from './data/greenLockData.json';
+import stakedDataRaw from './data/stakedData.json';
 import { FaTwitter } from 'react-icons/fa';
 
 export default function Dashboard() {
@@ -19,7 +20,9 @@ export default function Dashboard() {
   const [sortOrder, setSortOrder] = useState('asc');
   const [reminderDays, setReminderDays] = useState('');
   const [eligibility, setEligibility] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
+  const itemsPerPage = 15;
   const YOUR_TOKEN_ADDRESS = '0xYourTokenAddressHere';
   const TOKEN_THRESHOLD_SINGLE = 50000;
   const TOKEN_THRESHOLD_MULTIPLE = 100000;
@@ -106,18 +109,27 @@ export default function Dashboard() {
   };
 
   const tokenOptions = [...new Set(greenLockData.map(token => token.name))];
+  const stakedData = stakedDataRaw.sort((a, b) => b.total_staked - a.total_staked);
+  const totalPages = Math.ceil(stakedData.length / itemsPerPage);
+  const paginatedData = stakedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div className="min-h-screen bg-[#0A1C2F] text-white p-6 relative flex flex-col justify-start">
-      <div className="absolute top-4 right-6">
-        <a href="https://x.com/JarvisAgentAi" target="_blank" rel="noopener noreferrer">
-          <FaTwitter className="text-white text-2xl hover:text-blue-500" />
-        </a>
+    <div className="min-h-screen bg-[#0A1C2F] text-white p-6">
+      <div className="text-center mb-6">
+        <h1 className="text-4xl italic font-bold">Virgenscan</h1>
+        <p className="text-lg italic">Just A Rather Virgen Intelligent System ($JARVIS)</p>
+        <div className="mt-4">
+          <a href="https://x.com/JarvisAgentAi" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="inline-block text-2xl hover:text-blue-500" />
+          </a>
+        </div>
       </div>
 
-      <div className="text-center mb-6">
-        <h1 className="text-4xl italic font-bold text-white">Virgenscan</h1>
-        <p className="text-lg italic">Just A Rather Virgen Intelligent System ($JARVIS)</p>
+      <div className="text-center mt-6 mb-10">
+        <h2 className="text-3xl font-bold italic mb-4">JOIN TO LAUNCH</h2>
+        <a href="https://app.virtuals.io/geneses/3538" target="_blank" rel="noopener noreferrer">
+          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg shadow">JOIN</button>
+        </a>
       </div>
 
       <div className="flex justify-center space-x-2 mb-10">
@@ -125,16 +137,8 @@ export default function Dashboard() {
         <button onClick={() => setShowSection('greenlock')} className={`px-4 py-2 rounded ${showSection === 'greenlock' ? 'bg-blue-600' : 'bg-gray-600'}`}>Green Lock Period</button>
         <button onClick={() => setShowSection('subscribe')} className={`px-4 py-2 rounded ${showSection === 'subscribe' ? 'bg-blue-600' : 'bg-gray-600'}`}>Subscribe Unlock Period</button>
         <button onClick={() => setShowSection('agents')} className={`px-4 py-2 rounded ${showSection === 'agents' ? 'bg-blue-600' : 'bg-gray-600'}`}>Agent Market (coming soon)</button>
+        <button onClick={() => setShowSection('staked')} className={`px-4 py-2 rounded ${showSection === 'staked' ? 'bg-blue-600' : 'bg-gray-600'}`}>Total Staked Agents</button>
       </div>
-
-      {showSection === '' && (
-        <div className="text-center mt-12 mb-10">
-          <h2 className="text-3xl font-bold italic mb-4">JOIN TO LAUNCH</h2>
-          <a href="https://app.virtuals.io/geneses/3538" target="_blank" rel="noopener noreferrer">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg shadow">JOIN</button>
-          </a>
-        </div>
-      )}
 
       {showSection === 'volume' && (
         <div className="max-w-xl mx-auto">
@@ -208,6 +212,39 @@ export default function Dashboard() {
             </label>
           </div>
           <button className="bg-blue-600 px-4 py-2 rounded">Subscribe</button>
+        </div>
+      )}
+
+      {showSection === 'staked' && (
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-xl font-bold mb-4">Total Staked Agents</h2>
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-gray-700">
+                <th className="p-2 border">Agent</th>
+                <th className="p-2 border">Total Staked</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedData.map((item, index) => (
+                <tr key={index} className="odd:bg-gray-800 even:bg-gray-900">
+                  <td className="p-2 border">{item.agent}</td>
+                  <td className="p-2 border">{item.total_staked.toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="flex justify-center mt-4 space-x-2">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`px-3 py-1 rounded ${currentPage === i + 1 ? 'bg-blue-500' : 'bg-gray-600'}`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
