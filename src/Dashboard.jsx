@@ -114,22 +114,23 @@ export default function Dashboard() {
   const paginatedData = stakedData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div className="min-h-screen bg-[#0A1C2F] text-white p-6">
-      <div className="text-center mb-6">
-        <h1 className="text-4xl italic font-bold">Virgenscan</h1>
-        <p className="text-lg italic">Just A Rather Virgen Intelligent System ($JARVIS)</p>
-        <div className="mt-4">
-          <a href="https://x.com/JarvisAgentAi" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="inline-block text-2xl hover:text-blue-500" />
+    <div className="min-h-screen bg-cover bg-center text-white p-6" style={{ backgroundImage: 'url(/images/nwbckgrnd.png)' }}>
+      <div className="flex justify-between items-start mb-6">
+        <div>
+          <h1 className="text-2xl italic font-bold">Virgenscan</h1>
+        </div>
+        <div className="text-center mx-auto">
+          <p className="text-lg italic">$JARVIS is live.</p>
+          <p className="text-sm italic mt-1">Official CA: 0x1E562BF73369D1d5B7E547b8580039E1f05cCc56</p>
+          <a href="https://app.virtuals.io/virtuals/28325" target="_blank" rel="noopener noreferrer">
+            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg shadow mt-2">TRADE $JARVIS</button>
           </a>
         </div>
-      </div>
-
-      <div className="text-center mt-6 mb-10">
-        <h2 className="text-3xl font-bold italic mb-4">JOIN TO LAUNCH</h2>
-        <a href="https://app.virtuals.io/geneses/3538" target="_blank" rel="noopener noreferrer">
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg shadow">JOIN</button>
-        </a>
+        <div>
+          <a href="https://x.com/JarvisAgentAi" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-2xl hover:text-blue-500" />
+          </a>
+        </div>
       </div>
 
       <div className="flex justify-center space-x-2 mb-10">

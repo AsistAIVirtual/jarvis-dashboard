@@ -232,5 +232,33 @@
     "image": "/images/h011yw00d.png",
     "participants": "1,854",
     "oversub": "2132.30%"
-  }
-]
+ },
+  {
+    "name": "Virgen Market",
+    "ticker": "VGM",
+    "baseUnlock": 87,
+    "date": "2025-06-02",
+    "image": "/images/virgen-market.png",
+    "participants": "4,570",
+    "oversub": "486.45%"
+   },
+  {
+    "name": "Chat4pt",
+    "ticker": "CHAT4PT",
+    "baseUnlock": 20,
+    "date": "2025-06-02",
+    "image": "/images/chat4pt.png",
+    "participants": "2,261",
+    "oversub": "302.64%"
+   },
+  {
+    "name": "JARVIS AIGENT",
+    "ticker": "JARVIS",
+    "baseUnlock": 90,
+    "date": "2025-06-02",
+    "image": "/images/jarvis-aigent.png",
+    "participants": "3,158",
+    "oversub": "356.11%" 
+ }
+    ]
+ 
