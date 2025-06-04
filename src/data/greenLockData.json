@@ -200,7 +200,7 @@
   {
     "name": "Arcturian AI",
     "ticker": "LIGHT",
-    "baseUnlock": 13,
+    "baseUnlock": 120,
     "date": "2025-05-31",
     "image": "/images/arcturian.png",
     "participants": "878",
