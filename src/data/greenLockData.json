@@ -259,6 +259,25 @@
     "image": "/images/jarvis-aigent.png",
     "participants": "3,158",
     "oversub": "356.11%" 
- }
-    ]
+},
+  {
+    "name": "ASYNCHRONUS",
+    "ticker": "ASYNC",
+    "baseUnlock": 30,
+    "date": "2025-06-04",
+    "image": "/images/ASYNCHRONUS.png",
+    "participants": "8,726",
+    "oversub": "928.34%" 
+     
+},
+  {
+    "name": "aiKat",
+    "ticker": "AIKAT",
+    "baseUnlock": 67,
+    "date": "2025-06-04",
+    "image": "/images/aiKat.png",
+    "participants": "2,932",
+    "oversub": "318.09%" 
+ }    
+]
  
