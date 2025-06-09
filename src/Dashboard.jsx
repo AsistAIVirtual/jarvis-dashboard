@@ -13,7 +13,7 @@ export default function Dashboard() {
   const [search, setSearch] = useState('');
   const [showSection, setShowSection] = useState('');
   const [tokenAddress, setTokenAddress] = useState('');
-  const [email, setEmail] = useState('');
+  const [Xusername, setXusername] = useState('');
   const [agreeToNotify, setAgreeToNotify] = useState(false);
   const [userWallet, setUserWallet] = useState('');
   const [filterOption, setFilterOption] = useState('all');
@@ -202,7 +202,7 @@ export default function Dashboard() {
               <option key={index} value={token} />
             ))}
           </datalist>
-          <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Xusername" value={Xusername} onChange={(e) => setXusername(e.target.value)} />
           <input className="w-full p-2 mb-2 rounded text-black" placeholder="Enter Your Wallet Address" value={userWallet} onChange={(e) => setUserWallet(e.target.value)} onBlur={checkEligibility} />
           <input className="w-full p-2 mb-2 rounded text-black" placeholder="Reminder Days Before Unlock" value={reminderDays} onChange={(e) => setReminderDays(e.target.value)} />
           {eligibility && <p className="mb-2 text-green-400">{eligibility}</p>}
