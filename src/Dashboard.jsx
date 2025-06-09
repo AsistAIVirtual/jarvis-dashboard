@@ -23,9 +23,9 @@ export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 15;
-  const YOUR_TOKEN_ADDRESS = '0xYourTokenAddressHere';
-  const TOKEN_THRESHOLD_SINGLE = 50000;
-  const TOKEN_THRESHOLD_MULTIPLE = 100000;
+  const YOUR_TOKEN_ADDRESS = '0xa72fB1A92A1489a986fE1d27573F4F6a1bA83dBe';
+  const TOKEN_THRESHOLD_SINGLE = 200000;
+  const TOKEN_THRESHOLD_MULTIPLE = 500000;
   const apiKey = 'MA9MEETHKKBPXMBKSGRYE4E6CBIERXS3EJ';
 
   const checkEligibility = async () => {
