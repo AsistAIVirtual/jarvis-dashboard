@@ -65,8 +65,8 @@
   {
     "name": "Mello AI",
     "ticker": "MELLO",
-    "baseUnlock": 24,
-    "date": "2025-05-31",
+    "baseUnlock": 82,
+    "date": "2025-06-11",
     "image": "/images/melloai.png",
     "participants": "1,893",
     "oversub": "326.32%"
@@ -110,8 +110,8 @@
   {
     "name": "Capminal",
     "ticker": "CAP",
-    "baseUnlock": 23,
-    "date": "2025-05-31",
+    "baseUnlock": 82,
+    "date": "2025-06-11",
     "image": "/images/capminal.png",
     "participants": "1,897",
     "oversub": "356.89%"
@@ -182,8 +182,8 @@
   {
     "name": "GPTWARS AI",
     "ticker": "GPTWAI",
-    "baseUnlock": 12,
-    "date": "2025-05-31",
+    "baseUnlock": 92,
+    "date": "2025-06-11",
     "image": "/images/gptwarsai.png",
     "participants": "3,483",
     "oversub": "783.81%"
@@ -227,8 +227,8 @@
   {
     "name": "h011yw00d",
     "ticker": "HOLLY",
-    "baseUnlock": 17,
-    "date": "2025-05-31",
+    "baseUnlock": 99,
+    "date": "2025-06-11",
     "image": "/images/h011yw00d.png",
     "participants": "1,854",
     "oversub": "2132.30%"
@@ -367,6 +367,15 @@
     "image": "/images/aiKat.png",
     "participants": "2,932",
     "oversub": "318.09%" 
+},
+  {
+    "name": "whim bet",
+    "ticker": "WHIM",
+    "baseUnlock": 28,
+    "date": "2025-06-11",
+    "image": "/images/whim-bet.png",
+    "participants": "3,338",
+    "oversub": "1,008.71%" 
  }    
 ]
  
