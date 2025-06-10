@@ -265,7 +265,7 @@
     "ticker": "ASYNC",
     "baseUnlock": 30,
     "date": "2025-06-04",
-    "image": "/images/ASYNCHRONUS.png",
+    "image": "/images/asynchronus.png",
     "participants": "8,726",
     "oversub": "928.34%" 
 },
@@ -274,7 +274,7 @@
     "ticker": "ERM",
     "baseUnlock": 84,
     "date": "2025-06-10",
-    "image": "/images/ERM.png",
+    "image": "/images/erm.png",
     "participants": "6,317",
     "oversub": "646.43%" 
 },
@@ -283,7 +283,7 @@
     "ticker": "MOZAIQ",
     "baseUnlock": 23,
     "date": "2025-06-10",
-    "image": "/images/Mozaiq.png",
+    "image": "/images/mozaiq.png",
     "participants": "1,855",
     "oversub": "220%" 
 },
@@ -292,7 +292,7 @@
     "ticker": "STA",
     "baseUnlock": 116,
     "date": "2025-06-10",
-    "image": "/images/SentiArch.png",
+    "image": "/images/sentiarch.png",
     "participants": "560",
     "oversub": "148.62%" 
 },
@@ -301,7 +301,7 @@
     "ticker": "SIYA",
     "baseUnlock": 84,
     "date": "2025-06-10",
-    "image": "/images/Siya-AI.png",
+    "image": "/images/siya-ai.png",
     "participants": "8,881",
     "oversub": "997.55%" 
 },
@@ -310,7 +310,7 @@
     "ticker": "OOPZ",
     "baseUnlock": 26,
     "date": "2025-06-10",
-    "image": "/images/Oracle-of-Preference-ZK.png",
+    "image": "/images/oracle-of-preference-zk.png",
     "participants": "5,524",
     "oversub": "621.44%" 
 },
@@ -319,7 +319,7 @@
     "ticker": "0xMETA",
     "baseUnlock": 58,
     "date": "2025-06-10",
-    "image": "/images/0xmeta-AI.png",
+    "image": "/images/0xmeta-ai.png",
     "participants": "2,814",
     "oversub": "330.63%" 
 },
@@ -328,7 +328,7 @@
     "ticker": "ARTS",
     "baseUnlock": 91,
     "date": "2025-06-10",
-    "image": "/images/ARTSED.png",
+    "image": "/images/artsed.png",
     "participants": "5,329",
     "oversub": "488.84%" 
 },
@@ -337,7 +337,7 @@
     "ticker": "SS",
     "baseUnlock": 89,
     "date": "2025-06-10",
-    "image": "/images/Sniper-Search.png",
+    "image": "/images/sniper-search.png",
     "participants": "2,236",
     "oversub": "299.45%" 
 },
@@ -346,7 +346,7 @@
     "ticker": "QUACK",
     "baseUnlock": 29,
     "date": "2025-06-10",
-    "image": "/images/NOUN584.png",
+    "image": "/images/noun584.png",
     "participants": "3,643",
     "oversub": "385%" 
 },
@@ -355,7 +355,7 @@
     "ticker": "MONO",
     "baseUnlock": 51,
     "date": "2025-06-10",
-    "image": "/images/Monocle.png",
+    "image": "/images/monocle.png",
     "participants": "850",
     "oversub": "128.14%" 
 },
