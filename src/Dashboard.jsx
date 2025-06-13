@@ -26,7 +26,7 @@ export default function Dashboard() {
   const YOUR_TOKEN_ADDRESS = '0xa72fB1A92A1489a986fE1d27573F4F6a1bA83dBe';
   const TOKEN_THRESHOLD_SINGLE = 200000;
   const TOKEN_THRESHOLD_MULTIPLE = 500000;
-  const apiKey = 'MA9MEETHKKBPXMBKSGRYE4E6CBIERXS3EJ';
+  const apiKey = 'xxxxx';
 
   const checkEligibility = async () => {
     if (!userWallet) return;
