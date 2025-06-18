@@ -134,12 +134,15 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="flex justify-center space-x-2 mb-10">
-        <button onClick={() => setShowSection('volume')} className={`px-4 py-2 rounded ${showSection === 'volume' ? 'bg-blue-600' : 'bg-gray-600'}`}>Daily Volume</button>
-        <button onClick={() => setShowSection('greenlock')} className={`px-4 py-2 rounded ${showSection === 'greenlock' ? 'bg-blue-600' : 'bg-gray-600'}`}>Green Lock Period</button>
-        <button onClick={() => setShowSection('subscribe')} className={`px-4 py-2 rounded ${showSection === 'subscribe' ? 'bg-blue-600' : 'bg-gray-600'}`}>Subscribe Unlock Period</button>
-        <button onClick={() => setShowSection('agents')} className={`px-4 py-2 rounded ${showSection === 'agents' ? 'bg-blue-600' : 'bg-gray-600'}`}>Agent Market (coming soon)</button>
-        <button onClick={() => setShowSection('staked')} className={`px-4 py-2 rounded ${showSection === 'staked' ? 'bg-blue-600' : 'bg-gray-600'}`}>Total Staked Agents</button>
+        <div className="flex justify-center space-x-2 mb-10">
+  <button onClick={() => setShowSection('volume')} className={`px-4 py-2 rounded ${showSection === 'volume' ? 'bg-blue-600' : 'bg-gray-600'}`}>Daily Volume</button>
+  <button onClick={() => setShowSection('greenlock')} className={`px-4 py-2 rounded ${showSection === 'greenlock' ? 'bg-blue-600' : 'bg-gray-600'}`}>Green Lock Period</button>
+  <button onClick={() => setShowSection('subscribe')} className={`px-4 py-2 rounded ${showSection === 'subscribe' ? 'bg-blue-600' : 'bg-gray-600'}`}>Subscribe Unlock Period</button>
+  <button onClick={() => setShowSection('agents')} className={`px-4 py-2 rounded ${showSection === 'agents' ? 'bg-blue-600' : 'bg-gray-600'}`}>Agent Market (coming soon)</button>
+  <button onClick={() => setShowSection('staked')} className={`px-4 py-2 rounded ${showSection === 'staked' ? 'bg-blue-600' : 'bg-gray-600'}`}>Total Staked Agents</button>
+  <button onClick={() => setShowSection('Genesis Point Calculator')} className={`px-4 py-2 rounded ${showSection === 'Genesis Point Calculator' ? 'bg-blue-600' : 'bg-gray-600'}`}>Genesis Point Calculator</button>
+</div>
+
       </div>
 
       {showSection === 'volume' && (
