@@ -4,6 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import greenLockData from './data/greenLockData.json';
 import stakedDataRaw from './data/stakedData.json';
 import { FaTwitter } from 'react-icons/fa';
+import GenesisPPR from './components/GenesisPPR';
 
 export default function Dashboard() {
   const [wallet, setWallet] = useState('');
@@ -215,6 +216,7 @@ export default function Dashboard() {
           <button className="bg-blue-600 px-4 py-2 rounded">Subscribe</button>
         </div>
       )}
+{showSection === 'Genesis Point Calculator' && <GenesisPPR />}
 
       {showSection === 'staked' && (
         <div className="max-w-6xl mx-auto">
